@@ -97,6 +97,6 @@ dwsync.xml
 # Custom
 dist/
 public/
-docs/
+documentation/
 !public/index.php
 !public/.htaccess
