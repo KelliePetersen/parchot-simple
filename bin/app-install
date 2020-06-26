@@ -1,0 +1,15 @@
+#!/bin/bash
+
+BIN_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+PROJECT_HOME="${BIN_DIR}/../"
+
+cd $BIN_DIR
+./composer-download
+
+cd $PROJECT_HOME
+php ./bin/composer.phar install
+./vendor/bin/phing
+
+echo "Done Installing Application"
+
+

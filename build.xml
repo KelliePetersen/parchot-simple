@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Parchot Website Official Build File -->
+<project name="ParchotWeb" phingVersion="2.16" description="Official Parchot Website Build" default="publish">
+	
+	<!-- Property Declarations -->
+	<property file="./build.properties" />
+	
+	<!-- FileSet Declarations -->
+	<fileset dir="${build.webpack-output}/" id="webpack-code-build">
+		<include name="*.js" />
+		<include name="*.css" />
+		<include name="robots.txt" />
+		<exclude name="sw.js" />
+	</fileset>
+
+
+	<fileset dir="./${build.webpack-output}" id="webpack-images-build">
+		<include name="images/*" />
+	</fileset>
+
+	<fileset dir="${build.logs}/" id="application-log-files">
+		<include name="*.js" />
+		<include name="*.css" />
+		<include name="robots.txt" />
+		<exclude name="sw.js" />
+	</fileset>
+
+	<!-- 1) Install NPM Packages -->
+	<target name="npm-install">
+		<exec command="npm i" dir="./" />
+		<echo msg="Finished Installing Node Packages" />
+	</target>
+
+	<!-- 2) Webpack Build -->
+	<target name="webpack-build">
+		<exec command="npm run build" dir="./" />
+		<echo msg="Finished Building Webpack" />
+	</target>
+
+	<!-- 3) Build Public Folder-->
+	<target name="make-public">
+		<mkdir dir="${build.target}" />
+		<copy todir="${build.target}">
+			<fileset refid="webpack-images-build" />
+			<fileset refid="webpack-code-build" />
+		</copy>
+		<echo msg="Finished Building Public Folder" />
+	</target>
+
+	<!-- 4) Build Log Folder -->
+	<target name="make-logs">
+		<mkdir dir="${build.logs}" />
+		<touch file="${build.logs}/security.log" />
+		<chmod file="${build.logs}/security.log" mode="0777" />
+	</target>
+
+	<!-- 5) Make Docs -->
+	<target name="make-docs">
+		<mkdir dir="${build.docs}" />
+		<exec command="php ./bin/phpDocumentor.phar -d ${build.phpdoc-src} -t ${build.phpdoc-target}" dir="./" />
+	</target>
+
+	<!-- Publish Step -->
+	<target name="publish" depends="npm-install, webpack-build, make-public, make-logs, make-docs">
+		<echo msg="Publishing..." />
+	</target>
+
+</project>

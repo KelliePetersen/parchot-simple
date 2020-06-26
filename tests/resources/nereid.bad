@@ -1,0 +1,14 @@
+[General]
+
+; System hard-switch for application availablility.
+; Switch to false to redirect all users to 'system-offline-path'
+; Unexpected values are assumed to be false.
+; values: [true | false]
+
+system-online=true
+
+; Resource path that will be loaded if 'system-online' 
+; is set to false
+; values: [null | resource-path]
+
+system-offline-path=null

@@ -1,0 +1,49 @@
+.nav {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 0;
+
+  &__content {
+    display: flex;
+    margin: 0;
+    margin-right: 25px;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: all 0.2s;
+    
+    &--is-visible {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0px);
+    }
+
+    &--is-hidden {
+      visibility: hidden;
+    }
+  }
+
+  &__item {
+    display: block;
+    font-weight: 400;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin: 0 20px;
+    color: #fff;
+    opacity: 1;
+    transition: .2s;
+    padding: 5px 0;
+
+    &:hover {
+      outline: none;
+    }
+  }
+
+  &--hidden {
+    display: none;
+    @include respond-to('tablet-small') {
+      display: block;
+    }
+  }
+}

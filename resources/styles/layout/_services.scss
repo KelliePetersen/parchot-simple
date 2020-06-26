@@ -1,0 +1,89 @@
+.services {
+  width: 100%;
+  background-color: $background-alt;
+  padding: 0 0 100px 0;
+  @include respond-to('tablet') {
+    padding: 50px 0 250px 0;
+  }
+
+  &__wrapper {
+    width: 80%;
+    max-width: 760px;
+    margin: 0 auto;
+    @include respond-to('desktop') {
+      max-width: 1200px;
+    }
+  }
+
+  &__subheading {
+    color: $black;
+    margin-bottom: 15px;
+    @include respond-to('tablet-small') {
+      font-size: 1.25rem;
+      margin-left: 30px;
+    }
+  }
+
+  &__heading {
+    font-family: 'Manrope', 'Playfair Display', serif;
+    font-size: 2rem;
+    margin: 0;
+    @include respond-to('tablet-small') {
+      font-size: 3rem;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    column-gap: 20px;
+    row-gap: 60px;
+    padding-top: 50px;
+    margin: 0 auto;
+    @include respond-to('tablet') {
+      grid-template-columns: 1fr 1fr;
+      padding-top: 75px;
+      column-gap: 50px;
+      row-gap: 100px;
+    }
+    @include respond-to('tablet-large') {
+      column-gap: 100px;
+    }
+    @include respond-to('desktop') {
+      grid-template-columns: 1fr 1fr 1fr;
+      column-gap: 80px;
+      row-gap:125px;
+    }
+  }
+
+  &__card {
+    text-align: left;
+    font-size: 1.125rem;
+
+    @include respond-to('tablet-small') {
+      display: block;
+      font-size: 1.25rem;
+    }
+  }
+
+  &__name {
+    margin: 10px 0;
+    font-weight: bold;
+    font-family: $font-heading;
+    font-size: 1.25em;
+    letter-spacing: 1px;
+  }
+
+  &__subtitle {
+    margin: 0;
+    color: $grey;
+    font-size: 0.9em;
+  }
+
+  &__description {
+    font-size: 0.9em;
+    margin: 20px 0 0 0;
+    line-height: 2;
+    max-width: 500px;
+    color: #555;
+  }
+}

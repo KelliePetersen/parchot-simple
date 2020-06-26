@@ -1,0 +1,47 @@
+.hero {
+  width: 100vw;
+  height: 100vh;
+  min-height: 300px;
+  position: relative;
+  background-color: $background;
+
+  &__container {
+    @include centered;
+    width: 85%;
+    text-align: center;
+    color: $text-light;
+  }
+  
+  &__heading {
+    font-size: 9vmin;
+    font-weight: 400;
+    word-spacing: 5px;
+    letter-spacing: 1px;
+    line-height: 1.4;
+    margin-bottom: 30px;
+
+    @include respond-to('tablet') {
+      font-size: 3em;
+    }
+
+    @include respond-to('tablet-large') {
+      font-size: 4em;
+    }
+  }
+
+  &__subheading {
+    display: none;
+    max-width: 460px;
+    font-size: 1rem;
+    line-height: 2;
+    letter-spacing: 1px;
+    margin: 0 auto 45px auto;
+    @include respond-to('tablet') {
+      display: block;
+      font-size: 1.125rem;
+    }
+    @include respond-to('landscape-phone') {
+      display: none;
+    }
+  }
+}

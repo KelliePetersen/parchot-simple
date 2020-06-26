@@ -1,0 +1,65 @@
+.menu {
+  background-color: transparent;
+  width: $menu-width;
+  height: calc(#{$menu-height} * 3 + 20px);
+  cursor: pointer;
+  display: block;
+  position: relative;
+  border: none;
+  order: 1;
+  transition: all 0.5s;
+  outline: none;
+
+  &--is-active > &__bars::before {
+    transform: translate(14px, 0.1px);
+  }
+
+  &--is-active > &__bars::after {
+    transform: translate(-14px, 0.1px);
+  }
+
+  &__bars { 
+    @include centered;
+    background-color: $white;
+    width: $menu-width;
+    height: $menu-height;
+    transition: .2s;
+
+    &::before {
+      display: block;
+      content: "";
+      position: absolute;
+      top: $menu-margin;
+      background-color: $white;
+      width: 25px;
+      height: $menu-height;
+      transform: translateY(0.1px);
+      transition: transform 0.3s;
+    }
+
+    &::after {
+      display: block;
+      content: "";
+      position: absolute;
+      bottom: $menu-margin;
+      right: 0;
+      background-color: $white;
+      width: 25px;
+      height: $menu-height;
+      transform: translateY(0.1px);
+      transition: transform 0.3s;
+    }
+  }
+
+  &--is-open {
+    transform: rotate(-135deg) scale(0.8);
+
+    .menu__bars::before {
+      transform: rotate(90deg) translate(3px, -7.5px);
+    }
+
+    .menu__bars::after {
+      transform: rotate(90deg) translate(-3px, 7.5px);
+    }
+  }
+}

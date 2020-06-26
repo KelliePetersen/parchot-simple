@@ -1,0 +1,32 @@
+.social-media {
+  display: none;
+  width: max-content;
+  margin: auto 0 auto auto;
+  grid-area: c;
+  @include respond-to('tablet') {
+    display: block;
+  }
+  @include respond-to('desktop') {
+    margin: 0;
+  }
+  &:hover .social-media__link {
+    opacity: 0.5;
+  }
+  &:hover .social-media__link:hover {
+    opacity: 1;
+  }
+
+  &__link {
+    outline-color: $white;
+    display: inline-block;
+    margin: 0 10px 0 0;
+    transition: opacity 0.3s;
+    &:focus {
+      opacity: 0.5;
+    }
+  }
+
+  &__icon {
+    width: 30px;
+  }
+}

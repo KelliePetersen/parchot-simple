@@ -1,0 +1,160 @@
+.intro {
+  width: 100%;
+  background-color: white;
+  padding: 100px 0;
+  @include respond-to('tablet-small') {
+    height: calc(100vh + 150px);
+    min-height: 500px;
+    padding-bottom: 150px;
+  }
+  @include respond-to('tablet') {
+    padding: 150px 0 150px 0;
+    min-height: 700px;
+  }
+
+  &__wrapper {
+    position: relative;
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  &__text-container {
+    @include respond-to('tablet-small') {
+      @include centered;
+      width: 80%;
+    }
+    @include respond-to('tablet-large') {
+      width: 780px;
+      max-width: 90%;
+    }
+  }
+
+  &__heading {
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.7;
+    word-spacing: 6.5px;
+    margin: 0 0 20px 0;
+    text-align: center;
+    @include respond-to('tablet-small') {
+      font-size: 2rem;
+      margin: 0;
+    }
+    @include respond-to('tablet-large') {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__grid {
+    display: none;
+    @include respond-to('tablet') {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      margin: 50px auto 0 auto;
+      max-width: 600px;
+    }
+  }
+
+  &__card {
+    text-align: center;
+  }
+
+  &__icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 10px auto;
+  }
+
+  &__aside {
+    display: none;
+    transform: rotate(-90deg);
+    transform-origin: left;
+    position: absolute;
+    left: -20px;
+    bottom: 60px;
+    font-family: 'Playfair Display', 'Manrope', serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    word-spacing: 4px;
+    @include respond-to('tablet') {
+      display: block;
+    }
+  }
+
+  &__list {
+    font-style: italic;
+    font-size: 0.875rem;
+    line-height: 1.7;
+    text-align: center;
+    @include respond-to('tablet-small') {
+      position: absolute;
+      text-align: left;
+      bottom: -70px;
+      left: 80px;
+    }
+  }
+
+  &__bullet {
+    display: inline-block;
+    margin: 2px 5px;
+    width: 5px;
+    height: 5px;
+    background-color: $grey;
+    border-radius: 50%;
+  }
+
+  &__corner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 30%;
+    max-width: 400px;
+    border-top: 1px solid $grey;
+    border-left: 1px solid $grey;
+    border-bottom: 1px solid $grey;
+    opacity: 0;
+
+    @include respond-to('tablet-small') {
+      opacity: 0.5;
+    }
+    @include respond-to('tablet-large') {
+      opacity: 1;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -15px;
+      left: -15px;
+      width: 80px;
+      height: 80px;
+      border-top: 1px solid $grey;
+      border-left: 1px solid $grey;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: -15px;
+      width: 80px;
+      height: 80px;
+      border-left: 1px solid $grey;
+      border-bottom: 1px solid $grey;
+    }
+
+    &--right {
+      right: 0;
+      left: auto;
+      transform: scaleX(-1);
+      border-bottom: none;
+      height: 50%;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+}

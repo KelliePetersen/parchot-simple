@@ -1,0 +1,23 @@
+.animation {
+
+  &--line {
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: white;
+      bottom: 0px;
+      right: 0;
+      width: 100%;
+      height: 1.5px;
+      transform: translateX(-110%);
+      transition: transform .3s;
+    }
+
+    &:hover::after, &:focus::after {
+      transform: translateX(0);
+    }
+  }
+}

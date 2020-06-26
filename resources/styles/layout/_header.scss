@@ -1,0 +1,23 @@
+.header {
+  position: fixed;
+  top: $v-margin;
+  left: $h-margin;
+  right: $h-margin;
+  width: auto;
+  display: flex;
+  justify-content: flex-start;
+  z-index: 15;
+  mix-blend-mode: difference;
+  
+  @include respond-to ('desktop') {
+    top: $v-margin-desktop;
+    left: $h-margin-desktop;
+    right: $h-margin-desktop;
+    justify-content: center;
+  }
+
+  &--is-hidden .logo, &--is-hidden .nav__content {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

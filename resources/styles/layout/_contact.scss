@@ -1,0 +1,125 @@
+.contact {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  width: 100vw;
+  height: 100vh;
+  background-color: #2c2c2c;
+  z-index: 10;
+  overflow-y: scroll;
+  transition: transform 0.6s, visibility 1s;
+
+  &--is-open {
+    visibility: visible;
+    transform: translateX(-100%);
+
+    .contact__wrapper {
+      opacity: 1;
+      transition: opacity 0.4s;
+      transition-delay: 0.5s;
+    }
+  }
+
+  &__wrapper {
+    width: 80%;
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 100px 0;
+    opacity: 0;
+    transition-delay: 1s;
+    color: $text-light;
+    @include respond-to('desktop') {
+      @include centered;
+      padding: 0;
+      display: grid;
+      grid-template-columns: minmax(475px, auto) minmax(auto, 650px);
+      max-width: 1300px;
+    }
+  }
+
+  &__text-wrapper {
+    @include respond-to('tablet') {
+      display: grid;
+      grid-template-areas: 
+        "a a a"
+        "b b c";
+    }
+    @include respond-to('desktop') {
+      display: block;
+    }
+  }
+
+  &__heading-wrapper {
+    grid-area: a;
+    max-width: 350px;
+    margin-bottom: 20px;
+  }
+
+  &__info {
+    width: max-content;
+    max-width: 100%;
+    &:hover .contact__link {
+      opacity: 0.6;
+    }
+    &:hover .contact__link:hover {
+      opacity: 1;
+    }
+    @include respond-to ('desktop') {
+      margin: 50px 0 70px 0;
+    }
+  }
+
+  &__line {
+    display: inline-block;
+    width: 30px;
+    height: 2px;
+    margin-bottom: 2px;
+    background-color: $white;
+    opacity: 0;
+    transform: scaleX(0.1);
+    transition: opacity 0.5s, transform 0.3s;
+    transform-origin: left;
+  }
+
+  &__text {
+    display: inline-block;
+    margin: 0 0 0 -15px;
+    transform: translateY(0.1px);
+    transition: transform 0.3s;
+    vertical-align: middle;
+  }
+
+  &__link {
+    position: relative;
+    display: inline-block;
+    margin-right: 50px;
+    color: $white;
+    width: max-content;
+    padding: 10px 0;
+    transition: opacity 0.3s;
+    @include respond-to ('desktop') {
+      display: block;
+    }
+
+    &:hover .contact__line, &:focus .contact__line {
+      opacity: 1;
+      transform: scaleX(1);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+
+    &:hover .contact__text, &:focus .contact__text {
+      transform: translate(20px, 0.2px);
+    }
+
+    &__icon {
+      width: 20px;
+      max-height: 20px;
+      object-fit: contain;
+      display: inline-block;
+      vertical-align: middle;
+      margin: 2px 5px 0 0;
+    }
+  }
+}

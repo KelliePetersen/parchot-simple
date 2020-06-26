@@ -1,0 +1,26 @@
+.logo {
+  display: block;
+  position: relative;
+  width: max-content;
+  visibility: hidden;
+  padding-top: 7px;
+
+  @include respond-to('tablet-small') {
+    visibility: visible;
+  }
+  
+  &__container {
+    width: max-content;
+  }
+  
+  &__link {
+    display: inline-block;
+    color: $white;
+    padding-bottom: 5px;
+    width: 95%;
+  }
+
+  &__text {
+    margin-bottom: 1px;
+  }
+}

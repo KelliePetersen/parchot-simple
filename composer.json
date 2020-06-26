@@ -1,0 +1,51 @@
+{
+  "name": "parchot/parchot-website",
+  "description": "Official Parchot Website",
+  "type": "project",
+  "keywords": [
+    "parchot",
+    "website",
+    "development",
+    "design"
+  ],
+  "homepage": "https://www.parchot.com",
+  "readme": "./README.md",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Ewan Petersen",
+      "email": "sample@gmail.com",
+      "homepage": "https://www.ewanpetersen.com"
+    },
+    {
+      "name": "Kellie Petersen",
+      "email": "sample@gmail.com",
+      "homepage": "https://www.kelliepetersen.com"
+    }
+  ],
+  "require": {
+    "monolog/monolog": "^2.0",
+    "symfony/routing": "^5.0",
+    "hassankhan/config": "^2.1",
+    "psr/log": "^1.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^8.5",
+    "phing/phing": "^2.16"
+  },
+  "autoload": {
+    "psr-4": {
+      "Parchot\\ParchotWeb\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Parchot\\ParchotWeb\\": [
+        "tests/unit/",
+        "tests/doubles/fakes/",
+        "tests/doubles/mocks/",
+        "tests/doubles/stubs/"
+      ]
+    }
+  }
+}

@@ -1,0 +1,104 @@
+.contact-prompt {
+  width: 100%;
+  height: max-content;
+  background-color: $light-black;
+  position: relative;
+  padding: 50px 0;
+
+  @include respond-to('tablet') {
+    padding: 100px 0 50px 0;
+    text-align: center;
+  }
+
+  &__wrapper {
+    width: 80%;
+    margin: 0 auto;
+    @include respond-to('desktop') {
+      width: 100%;
+      padding: 50px 120px 30px;
+    }
+  }
+
+  &__heading-wrapper {
+    position: relative;
+    width: 100%;
+    @include respond-to('tablet') {
+      width: max-content;
+      margin: 0 auto;
+    }
+  }
+
+  &__subheading {
+    color: #999;
+    font-weight: bold;
+    @include respond-to('desktop') {
+      position: absolute;
+      top: 2rem;
+      left: -200px;
+    }
+  }
+
+  &__heading {
+    font-family: 'Playfair Display', serif;
+    color: white;
+    font-size: 2rem;
+    font-weight: 400;
+    margin-top: 0;
+    @include respond-to('tablet') {
+      font-size: 3rem;
+    }
+    @include respond-to('tablet-large') {
+      font-size: 4rem;
+    }
+  }
+
+  &__summary {
+    max-width: 400px;
+    margin: 25px 0 30px 0;
+    color: #ccc;
+    line-height: 2;
+    letter-spacing: 0.5px;
+    
+    @include respond-to('tablet') {
+      margin: 50px auto;
+      font-size: 1.25rem;
+      max-width: 500px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    font-size: 0.875rem;
+    width: max-content;
+    margin-top: 50px;
+
+    @include respond-to('tablet-small') {
+      margin: 50px 0 0 auto;
+      text-align: right;
+      font-size: 1rem;
+    }
+  }
+
+  &__info-heading {
+    color: #c88b8b;
+    letter-spacing: 3px;
+    font-weight: bold;
+  }
+
+  &__link {
+    display: inline-block;
+    color: white;
+    letter-spacing: 0.5px;
+    padding-bottom: 10px;
+  }
+  
+  &--margin {
+    margin-right: 40px;
+    @include respond-to('tablet-small') {
+      margin-right: 60px;
+    }
+    @include respond-to('tablet') {
+      margin-right: 80px;
+    }
+  }
+}

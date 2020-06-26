@@ -1,0 +1,52 @@
+.button {
+  $button-height: 60px;
+  $button-width: 250px;
+  display: block;
+  position: relative;
+  width: 100%;
+  height: $button-height;
+  padding: 0;
+  cursor: pointer;
+  overflow: hidden;
+
+  @include respond-to('tablet') {
+    width: $button-width;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 100%;
+    width: 101%;
+    height: 100%;
+    background-color: white;
+    transition: transform 0.5s;
+  }
+
+  &:hover::after, &:focus::after {
+    transform: translateX(100%);
+  }
+
+  &__link {
+    color: #fff;
+    display: block;
+    @include centered;
+    transform: translate(-70%, -50%);
+    padding-bottom: 2px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1em;
+    z-index: 3;
+    mix-blend-mode: difference;
+  }
+
+  &__plane {
+    width: 20px;
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translate(30px, -50%);
+    z-index: 3;
+  }
+}
