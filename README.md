@@ -4,7 +4,7 @@ This is the first version of the Parchot website. A temporary single-page websit
 
 [kelliepetersen.github.io/parchot-simple/](https://kelliepetersen.github.io/parchot-simple/ "Parchot website Link")
 
-![Screenshot of Parchot website](screenshot.jpg "Parchot Website Screenshot")
+[![Screenshot of Parchot website](screenshot.jpg "Parchot Website Screenshot")](https://kelliepetersen.github.io/parchot-simple/ "Parchot website Link")
 
 ## Usage
 
