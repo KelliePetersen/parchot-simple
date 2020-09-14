@@ -7,7 +7,6 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const imageminMozjpeg = require('imagemin-mozjpeg');
 const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const OfflinePlugin = require('offline-plugin');
 
 const common = require('./webpack.common.js');
 
@@ -107,8 +106,7 @@ module.exports = merge(common, {
       detailedLogs: false,
       silent: false,
       strict: true
-    }),
-    new OfflinePlugin()
+    })
   ],
   output: {
     filename: '[name].[contentHash].js',
