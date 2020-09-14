@@ -7,6 +7,7 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const imageminMozjpeg = require('imagemin-mozjpeg');
 const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const HtmlCriticalWebpackPlugin = require('html-critical-webpack-plugin');
 
 const common = require('./webpack.common.js');
 
@@ -106,6 +107,19 @@ module.exports = merge(common, {
       detailedLogs: false,
       silent: false,
       strict: true
+    }),
+    new HtmlCriticalWebpackPlugin({
+      base: path.join(path.resolve(__dirname), 'dist/'),
+      src: 'index.html',
+      dest: 'index.html',
+      inline: true,
+      minify: true,
+      extract: true,
+      width: 1300,
+      height: 900,
+      penthouse: {
+        blockJSRequests: false
+      }
     })
   ],
   output: {
