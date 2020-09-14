@@ -1,5 +1,11 @@
 # Parchot Website
 
+This is the first version of the Parchot website. A temporary single-page website with services and projects, serving as a placeholder for the official website's release. 
+
+[kelliepetersen.github.io/parchot-simple/](https://kelliepetersen.github.io/parchot-simple/ "Parchot website Link")
+
+![Screenshot of Parchot website](https://github.com/KelliePetersen/parchot-simple/screenshot.jpg "Parchot Website Screenshot")
+
 ## Usage
 
 You need git and node.js on your computer before running.  
